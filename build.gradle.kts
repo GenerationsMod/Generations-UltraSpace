@@ -23,10 +23,6 @@ subprojects {
         maven("https://maven.generations.gg/releases")
     }
 
-    repositories {
-        mavenCentral()
-    }
-
     dependencies {
         "minecraft"("com.mojang:minecraft:$minecraftVersion")
         "mappings"(loom.officialMojangMappings())
