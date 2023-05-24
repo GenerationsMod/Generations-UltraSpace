@@ -26,7 +26,6 @@ repositories {
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}")
-    compileOnly("org.jetbrains:annotations:24.0.1")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionFabric")) { isTransitive = false }

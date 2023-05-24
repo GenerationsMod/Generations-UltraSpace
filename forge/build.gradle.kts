@@ -44,13 +44,9 @@ repositories {
 
 dependencies {
     forge("net.minecraftforge:forge:${project.properties["forge_version"]}")
-    compileOnly("org.jetbrains:annotations:24.0.1")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionForge")) { isTransitive = false }
-
-    common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 }
 
 tasks {

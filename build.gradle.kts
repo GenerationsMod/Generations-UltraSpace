@@ -16,9 +16,14 @@ subprojects {
 
     val loom = project.extensions.getByName<LoomGradleExtensionAPI>("loom")
 
+    repositories {
+        mavenCentral()
+    }
+
     dependencies {
         "minecraft"("com.mojang:minecraft:$minecraftVersion")
         "mappings"(loom.officialMojangMappings())
+        compileOnly("org.jetbrains:annotations:24.0.1")
     }
 
     loom.silentMojangMappingsLicense()
