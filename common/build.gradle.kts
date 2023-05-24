@@ -5,6 +5,10 @@ architectury {
 
 loom.accessWidenerPath.set(file("src/main/resources/generations_ultraspace.accesswidener"))
 
+repositories {
+    
+}
+
 dependencies {
     // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
     // Do NOT use other classes from fabric loader
@@ -14,7 +18,7 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("mavenCommon") {
-            artifactId = "${project.properties["archives_base_name"]}" + "-Common-" + project.version
+            artifactId = "${project.properties["archives_base_name"]}" + "-Common"
             from(components["java"])
         }
     }

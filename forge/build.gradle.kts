@@ -39,7 +39,7 @@ configurations {
 }
 
 repositories {
-    mavenCentral()
+    
 }
 
 dependencies {
@@ -88,7 +88,7 @@ components {
 publishing {
     publications {
         create<MavenPublication>("mavenCommon") {
-            artifactId = "${project.properties["archives_base_name"]}" + "-Forge-" + project.version
+            artifactId = "${project.properties["archives_base_name"]}" + "-Forge"
             from(components["java"])
         }
     }
