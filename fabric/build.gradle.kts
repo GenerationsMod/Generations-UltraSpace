@@ -19,16 +19,16 @@ configurations {
     getByName("developmentFabric").extendsFrom(configurations["common"])
 }
 
-repositories {
-
-}
-
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionFabric")) { isTransitive = false }
+
+    // Generations-Core Fabric
+    modImplementation("generations.gg.generations.core:Generations-Core-Fabric:1.0-Alpha-SNAPSHOT")
+    modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${project.properties["botarium_version"]}")
 }
 
 tasks {

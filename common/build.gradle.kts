@@ -3,16 +3,17 @@ architectury {
     platformSetupLoomIde()
 }
 
-loom.accessWidenerPath.set(file("src/main/resources/generations_ultraspace.accesswidener"))
+val minecraftVersion = project.properties["minecraft_version"] as String
 
-repositories {
-    
-}
+loom.accessWidenerPath.set(file("src/main/resources/generations_ultraspace.accesswidener"))
 
 dependencies {
     // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
     // Do NOT use other classes from fabric loader
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
+
+    modImplementation("generations.gg.generations.core:Generations-Core-Common:1.0-Alpha-SNAPSHOT")
+    modImplementation("earth.terrarium:botarium-common-${minecraftVersion}:${project.properties["botarium_version"]}")
 }
 
 publishing {

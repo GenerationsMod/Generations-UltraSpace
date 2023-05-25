@@ -38,15 +38,14 @@ configurations {
     getByName("developmentForge").extendsFrom(configurations["common"])
 }
 
-repositories {
-    
-}
-
 dependencies {
     forge("net.minecraftforge:forge:${project.properties["forge_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionForge")) { isTransitive = false }
+
+    // Generations-Core Forge
+    modImplementation("generations.gg.generations.core:Generations-Core-Forge:1.0-Alpha-SNAPSHOT")
 }
 
 tasks {

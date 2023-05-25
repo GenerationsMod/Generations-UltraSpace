@@ -7,9 +7,9 @@ license = "Insert License Here"
 modId = "generations_ultraspace"
 version = "${version}"
 displayName = "Generations Ultraspace"
-authors = "Me!"
+authors = "The Generations Team"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+Ultra Space Dimension Module for Generations.
 '''
 #logoFile = ""
 
@@ -25,4 +25,11 @@ modId = "minecraft"
 mandatory = true
 versionRange = "[1.19.4,)"
 ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.generations_ultraspace]]
+modId = "generations_core"
+mandatory = true
+versionRange = "[)"
+ordering = "BEFORE"
 side = "BOTH"

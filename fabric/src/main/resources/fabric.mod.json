@@ -16,16 +16,17 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "generations.gg.generations.ultraspace.generationsultraspace.fabric.GenerationsUltraSpaceFabric.java"
+      "generations.gg.generations.ultraspace.generationsultraspace.fabric.GenerationsUltraSpaceFabric"
     ]
   },
   "mixins": [
-    "examplemod.mixins.json",
-    "examplemod-common.mixins.json"
+    "generations_ultraspace.mixins.json",
+    "generations_ultraspace-common.mixins.json"
   ],
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.19.4",
-    "architectury": ">=8.1.79"
+    "architectury": ">=8.1.79",
+    "generations_core": "*"
   }
 }
