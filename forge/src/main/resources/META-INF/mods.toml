@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[45,)"
-#issueTrackerURL = ""
+issueTrackerURL = "https://github.com/GenerationsMod/Generations-UltraSpace.git"
 license = "Insert License Here"
 
 [[mods]]
