@@ -9,8 +9,6 @@ architectury {
 
 val minecraftVersion = project.properties["minecraft_version"] as String
 
-loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
-
 configurations {
     create("common")
     create("shadowCommon")
@@ -19,6 +17,8 @@ configurations {
     getByName("developmentFabric").extendsFrom(configurations["common"])
 }
 
+loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
+
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}")
@@ -26,12 +26,15 @@ dependencies {
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionFabric")) { isTransitive = false }
 
+    modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
+
     // Generations-Core Fabric
-    modImplementation("generations.gg.generations.core:Generations-Core-Fabric:1.0-Alpha-SNAPSHOT")
+    modImplementation("generations.gg.generations.core:Generations-Core-Fabric:${project.properties["generations-core_version"]}")
     modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${project.properties["botarium_version"]}")
 }
 
 tasks {
+    base.archivesName.set(base.archivesName.get() + "-Fabric")
     processResources {
         inputs.property("version", project.version)
 
@@ -67,11 +70,9 @@ components {
 }
 
 publishing {
-    publications {
-        create<MavenPublication>("mavenCommon") {
-            artifactId = "${project.properties["archives_base_name"]}" + "-Fabric"
-            from(components["java"])
-        }
+    publications.create<MavenPublication>("mavenCommon") {
+        artifactId = "${project.properties["archives_base_name"]}" + "-Fabric"
+        from(components["java"])
     }
 
     repositories {

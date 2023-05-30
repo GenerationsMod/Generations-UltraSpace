@@ -7,21 +7,21 @@ val minecraftVersion = project.properties["minecraft_version"] as String
 
 loom.accessWidenerPath.set(file("src/main/resources/generations_ultraspace.accesswidener"))
 
+sourceSets.main.get().resources.srcDir("src/main/generated/resources")
+
 dependencies {
     // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
     // Do NOT use other classes from fabric loader
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
 
-    modImplementation("generations.gg.generations.core:Generations-Core-Common:1.0-Alpha-SNAPSHOT")
+    modImplementation("generations.gg.generations.core:Generations-Core-Common:${project.properties["generations-core_version"]}")
     modImplementation("earth.terrarium:botarium-common-${minecraftVersion}:${project.properties["botarium_version"]}")
 }
 
 publishing {
-    publications {
-        create<MavenPublication>("mavenCommon") {
-            artifactId = "${project.properties["archives_base_name"]}" + "-Common"
-            from(components["java"])
-        }
+    publications.create<MavenPublication>("mavenCommon") {
+        artifactId = "${project.properties["archives_base_name"]}" + "-Common"
+        from(components["java"])
     }
 
     repositories {

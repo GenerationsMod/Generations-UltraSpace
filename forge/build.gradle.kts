@@ -9,6 +9,14 @@ architectury {
 
 val minecraftVersion = project.properties["minecraft_version"] as String
 
+configurations {
+    create("common")
+    create("shadowCommon")
+    compileClasspath.get().extendsFrom(configurations["common"])
+    runtimeClasspath.get().extendsFrom(configurations["common"])
+    getByName("developmentForge").extendsFrom(configurations["common"])
+}
+
 loom {
     accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 
@@ -30,25 +38,21 @@ loom {
     }
 }
 
-configurations {
-    create("common")
-    create("shadowCommon")
-    compileClasspath.get().extendsFrom(configurations["common"])
-    runtimeClasspath.get().extendsFrom(configurations["common"])
-    getByName("developmentForge").extendsFrom(configurations["common"])
-}
-
 dependencies {
     forge("net.minecraftforge:forge:${project.properties["forge_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionForge")) { isTransitive = false }
 
+    modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
+
     // Generations-Core Forge
-    modImplementation("generations.gg.generations.core:Generations-Core-Forge:1.0-Alpha-SNAPSHOT")
+    modImplementation("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}")
+    modApi(include("earth.terrarium:botarium-forge-${minecraftVersion}:${project.properties["botarium_version"]}")!!)
 }
 
 tasks {
+    base.archivesName.set(base.archivesName.get() + "-Forge")
     processResources {
         inputs.property("version", project.version)
 
@@ -85,11 +89,9 @@ components {
 }
 
 publishing {
-    publications {
-        create<MavenPublication>("mavenCommon") {
-            artifactId = "${project.properties["archives_base_name"]}" + "-Forge"
-            from(components["java"])
-        }
+    publications.create<MavenPublication>("mavenCommon") {
+        artifactId = "${project.properties["archives_base_name"]}" + "-Forge"
+        from(components["java"])
     }
 
     repositories {

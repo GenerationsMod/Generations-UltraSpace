@@ -21,6 +21,11 @@ subprojects {
         mavenLocal()
         maven("https://maven.generations.gg/snapshots")
         maven("https://maven.generations.gg/releases")
+        maven("https://jitpack.io")
+        maven("https://nexus.resourcefulbees.com/repository/maven-public/")
+        maven("https://maven.bai.lol")
+        maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
+        maven("https://cursemaven.com").content { includeGroup("curse.maven") }
     }
 
     dependencies {
@@ -29,7 +34,6 @@ subprojects {
         
         compileOnly("org.jetbrains:annotations:24.0.1")
     }
-
     loom.silentMojangMappingsLicense()
 }
 
@@ -41,6 +45,7 @@ allprojects {
 
     version = project.properties["mod_version"] as String
     group = project.properties["maven_group"] as String
+    base.archivesName.set(project.properties["archives_base_name"] as String)
 
     tasks.withType<JavaCompile>().configureEach {
         options.encoding = "UTF-8"
