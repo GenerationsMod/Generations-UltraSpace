@@ -1,0 +1,144 @@
+{
+  "type": "generations_ultraspace:ultraspace",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "generations_ultraspace:ultra_deep_sea",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0.4,
+            "weirdness": -0.2,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "generations_ultraspace:ultra_jungle",
+          "parameters": {
+            "temperature": 0.04,
+            "humidity": 0.2,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "generations_ultraspace:ultra_desert",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "generations_ultraspace:ultra_forest",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": 0.2,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "generations_ultraspace:ultra_plant",
+          "parameters": {
+            "temperature": 0.05,
+            "humidity": 0.3,
+            "continentalness": 0.3,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "generations_ultraspace:ultra_crater",
+          "parameters": {
+            "temperature": 0.1,
+            "humidity": 0.3,
+            "continentalness": 0.2,
+            "erosion": 0.6,
+            "weirdness": 0.6,
+            "depth": -0.2,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "generations_ultraspace:ultra_ruin",
+          "parameters": {
+            "temperature": 0.1,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "generations_ultraspace:ultra_cliff",
+          "parameters": {
+            "temperature": 0.3,
+            "humidity": 0.2,
+            "continentalness": 0.1,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "generations_ultraspace:ultra_water",
+          "parameters": {
+            "temperature": 0.5,
+            "humidity": 0.3,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "generations_ultraspace:ultra_rocky",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": -0.2,
+            "erosion": 0,
+            "weirdness": 0.4,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "generations_ultraspace:ultra_cave",
+          "parameters": {
+            "temperature": 0.05,
+            "humidity": 0.5,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}
