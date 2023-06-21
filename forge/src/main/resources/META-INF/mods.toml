@@ -30,6 +30,6 @@ side = "BOTH"
 [[dependencies.generations_ultraspace]]
 modId = "generations_core"
 mandatory = true
-versionRange = "[)"
+versionRange = "[1.2-Alpha-SNAPSHOT, )"
 ordering = "BEFORE"
 side = "BOTH"
