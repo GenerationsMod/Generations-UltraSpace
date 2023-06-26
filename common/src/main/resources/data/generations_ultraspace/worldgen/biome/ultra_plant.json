@@ -1,17 +1,25 @@
 {
-  "temperature": 0.8,
-  "downfall": 0.4,
+  "temperature": 0.7,
+  "downfall": 0.8,
   "has_precipitation": true,
   "effects": {
-    "sky_color": 7907327,
-    "fog_color": 12638463,
-    "water_color": 4159204,
+    "sky_color": 7261008,
+    "fog_color": 8965743,
+    "water_color": 8561045,
     "water_fog_color": 329011,
+    "grass_color": 1797952,
+    "foliage_color": 3381066,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
+    },
+    "music": {
+      "sound": "minecraft:music.overworld.jungle_and_forest",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
     }
   },
   "spawners": {
@@ -50,16 +58,10 @@
         "maxCount": 4
       },
       {
-        "type": "minecraft:horse",
+        "type": "minecraft:wolf",
         "weight": 5,
-        "minCount": 2,
-        "maxCount": 6
-      },
-      {
-        "type": "minecraft:donkey",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 3
+        "minCount": 4,
+        "maxCount": 4
       }
     ],
     "misc": [],
@@ -184,10 +186,10 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_tall_grass_2",
-      "minecraft:trees_plains",
-      "minecraft:flower_plains",
-      "minecraft:patch_grass_plain",
+      "minecraft:forest_flowers",
+      "minecraft:trees_birch_and_oak",
+      "minecraft:flower_default",
+      "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
