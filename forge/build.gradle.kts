@@ -38,6 +38,10 @@ loom {
     }
 }
 
+repositories {
+    maven("https://thedarkcolour.github.io/KotlinForForge/")
+}
+
 dependencies {
     forge("net.minecraftforge:forge:${project.properties["forge_version"]}")
 
@@ -49,6 +53,10 @@ dependencies {
     // Generations-Core Forge
     modImplementation("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}")
     modApi(include("earth.terrarium:botarium-forge-${minecraftVersion}:${project.properties["botarium_version"]}")!!)
+
+    //Cobblemon
+    modRuntimeOnly("thedarkcolour:kotlinforforge:4.2.0")
+    modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 }
 
 tasks {
