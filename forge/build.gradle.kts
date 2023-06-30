@@ -28,13 +28,11 @@ loom {
         mixinConfig("generations_ultraspace.mixins.json")
     }
 
-    runs {
-        create("data") {
-            data()
-            programArgs("--all", "--mod", "generations_ultraspace")
-            programArgs("--output", project(":common").file("src/main/generated/resources").absolutePath)
-            programArgs("--existing", project(":common").file("src/main/resources").absolutePath)
-        }
+    runs.create("data") {
+        data()
+        programArgs("--all", "--mod", "generations_ultraspace")
+        programArgs("--output", project(":common").file("src/main/generated/resources").absolutePath)
+        programArgs("--existing", project(":common").file("src/main/resources").absolutePath)
     }
 }
 

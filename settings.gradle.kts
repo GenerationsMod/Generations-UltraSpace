@@ -8,18 +8,14 @@ pluginManagement {
 }
 
 plugins {
-    id("com.gradle.enterprise") version "3.13.2"
+    id("com.gradle.enterprise") version "3.13.4"
 }
 
-gradleEnterprise {
-    buildScan {
-        termsOfServiceUrl = "https://gradle.com/terms-of-service"
-        termsOfServiceAgree = "yes"
-    }
+gradleEnterprise.buildScan {
+    termsOfServiceUrl = "https://gradle.com/terms-of-service"
+    termsOfServiceAgree = "yes"
 }
 
-include("common")
-include("fabric")
-include("forge")
+include("common", "fabric", "forge")
 
 rootProject.name = "generations_ultraspace"
