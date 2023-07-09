@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    forge("net.minecraftforge:forge:${project.properties["forge_version"]}")
+    forge("net.minecraftforge:forge:$minecraftVersion-${project.properties["forge_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionForge")) { isTransitive = false }
