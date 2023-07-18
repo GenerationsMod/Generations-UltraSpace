@@ -184,7 +184,9 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
-      "minecraft:disk_clay"
+      "minecraft:disk_clay",
+      "generations_ultraspace:megastone_ore_placed",
+      "generations_ultraspace:z_crystal_ore_placed"
     ],
     [],
     [
