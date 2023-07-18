@@ -26,7 +26,6 @@ subprojects {
         maven("https://maven.bai.lol")
         maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
         maven("https://cursemaven.com").content { includeGroup("curse.maven") }
-        maven("https://maven.thepokecraftmod.com/releases")
         maven("https://maven.impactdev.net/repository/development/")
         maven("https://maven.parchmentmc.org")
     }
