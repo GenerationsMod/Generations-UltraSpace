@@ -8,7 +8,7 @@ pluginManagement {
 }
 
 plugins {
-    id("com.gradle.enterprise") version "3.13.4"
+    id("com.gradle.enterprise") version "3.14"
 }
 
 gradleEnterprise.buildScan {
@@ -18,4 +18,4 @@ gradleEnterprise.buildScan {
 
 include("common", "fabric", "forge")
 
-rootProject.name = "generations_ultraspace"
+rootProject.name = "generations-ultraspace"
