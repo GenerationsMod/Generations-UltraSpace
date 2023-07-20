@@ -1,6 +1,6 @@
 package generations.gg.generations.ultraspace.generationsultraspace;
 
-import generations.gg.generations.core.generationscore.ConfigLoader;
+import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.ultraspace.generationsultraspace.config.Config;
 
 public class GenerationsUltraSpace {
@@ -13,7 +13,7 @@ public class GenerationsUltraSpace {
 
 
     public static void init() {
-        CONFIG = ConfigLoader.loaderConfig(Config.class, MOD_ID, "config");
+        CONFIG = ConfigLoader.loaderConfig(Config.class, "ultraspace", "config");
         UltraSpaceDimension.registerDimension();
     }
 }
