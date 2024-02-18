@@ -13,7 +13,6 @@ public class GenerationsUltraSpace {
 
 
     public static void init() {
-        CONFIG = ConfigLoader.loaderConfig(Config.class, "ultraspace", "config");
-        UltraSpaceDimension.registerDimension();
+        CONFIG = ConfigLoader.loadConfig(Config.class, "ultraspace", "config");
     }
 }
